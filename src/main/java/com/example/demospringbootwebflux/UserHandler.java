@@ -1,7 +1,5 @@
 package com.example.demospringbootwebflux;
 
-import com.example.demospringbootwebflux.User;
-import com.example.demospringbootwebflux.UserRepository;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
@@ -46,8 +44,8 @@ public class UserHandler {
 
         // build response
         return customerMono
-            .flatMap(customer -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(fromObject(customer)))
-            .switchIfEmpty(notFound);
+                .flatMap(customer -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(fromObject(customer)))
+                .switchIfEmpty(notFound);
     }
 
     /**
@@ -73,7 +71,7 @@ public class UserHandler {
 
         // build response
         return responseMono
-            .flatMap(cust -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(fromObject(cust)));
+                .flatMap(cust -> ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(fromObject(cust)));
     }
 
     /**
@@ -88,7 +86,7 @@ public class UserHandler {
 
         // build response
         return responseMono
-            .flatMap(strMono -> ServerResponse.ok().contentType(MediaType.TEXT_PLAIN).body(fromObject(strMono)));
+                .flatMap(strMono -> ServerResponse.ok().contentType(MediaType.TEXT_PLAIN).body(fromObject(strMono)));
     }
 
 }

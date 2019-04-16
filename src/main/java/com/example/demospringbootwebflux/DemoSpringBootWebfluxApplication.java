@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DemoSpringBootWebfluxApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoSpringBootWebfluxApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoSpringBootWebfluxApplication.class, args);
+    }
 }
